@@ -1,0 +1,411 @@
+@import "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+
+@import "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css)";
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}
+
+body {
+    background: #4abdd6;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25%;
+    width: 25%;
+}
+
+/*
+    Image credits:
+    uifaces.com (http://uifaces.com/authorized)
+*/
+
+#login { display: none; }
+.login,
+.logout {
+    position: absolute;
+    top: -3px;
+    right: 0;
+}
+.header {
+    margin: auto 0;
+    text-align: center;
+ }
+.reviews {
+    color: white;
+    margin: 10px auto 20px;
+}
+.notes {
+    color: #999;
+    font-size: 12px;
+}
+.media .media-object { max-width: 120px; }
+.media-body { position: relative; }
+.media-date {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+.media-date li { padding: 0; }
+.media-date li:first-child:before { content: ''; }
+.media-date li:before {
+    content: '.';
+    margin-left: -2px;
+    margin-right: 2px;
+}
+.media-comment { margin-bottom: 20px; }
+.media-replied { margin: 0 0 20px 50px; }
+.media-replied .media-heading { padding-left: 6px; }
+
+.btn-circle {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+.btn-circle span { padding-right: 6px; }
+.embed-responsive { margin-bottom: 20px; }
+.tab-content {
+    padding: 50px 15px;
+}
+.custom-input-file {
+    overflow: hidden;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #eee url('https://s3.amazonaws.com/uifaces/faces/twitter/walterstephanie/128.jpg');
+    background-size: 120px;
+    border-radius: 120px;
+}
+input[type="file"]{
+    z-index: 999;
+    line-height: 0;
+    font-size: 0;
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
+    margin: 0;
+    padding:0;
+    left:0;
+}
+.uploadPhoto {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: none;
+    width: 50%;
+    height: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#title {
+    color: white;
+    font-weight: bold;
+    margin: auto 0;
+    text-align: center;
+}
+
+.question {
+    border: 3px solid white;
+    padding: 20px;
+}
+
+#question-data {
+    font-size: 17px;
+}
+
+.custom-input-file:hover .uploadPhoto { display: block; }
+
+.issues {
+    margin: 5px;
+}
+
+.list-group {
+    border: 2px solid grey;
+}
+
+#issues {
+    margin: 20px;
+}
+
+#create {
+    text-align: center;
+}
+
+.btn-sub {
+    text-align: center;
+}
+
+#ask_us {
+    text-align: center;
+}
+
+#add {
+    text-align: center;
+}
+
+#label {
+    clear: both;
+}
+
+/* navbar */
+
+.navbar-twitch {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 50px;
+	height: 100%;
+	border-radius: 0px;
+	border: 0px;
+    z-index: 1030;
+}
+.navbar-twitch.open {
+	width: 240px;
+}
+.navbar-twitch > .container {
+	padding: 0px;
+	width: 100%;
+}
+.navbar-twitch .navbar-header,
+.navbar-twitch .navbar-brand {
+	float: none;
+	display: block;
+	width: 100%;
+	margin: 0px;
+}
+.navbar-twitch .navbar-brand {
+    height: 50px;   
+}
+.navbar-twitch > .container .navbar-brand {
+	padding: 0px;
+	margin: 0px;
+}
+.navbar-twitch > .container .navbar-brand > .small-nav {
+	display: block;
+}
+.navbar-twitch > .container .navbar-brand > .small-nav > span.logo,	
+.navbar-twitch.open > .container .navbar-brand > .full-nav {
+    display: block;
+	font-weight: bold;
+	padding: 15px 2px 15px 3px;
+	font-size: 18pt;
+}
+.navbar-twitch.open > .container .navbar-brand {
+	width: 100%;
+	padding: 15px 15px 60px;
+	text-align: center;
+}
+.navbar-twitch.navbar-inverse > .container .navbar-brand > .small-nav > span.logo {
+	/*color: rgb(255, 255, 255);*/
+}
+.navbar-twitch .navbar-nav > li {
+	float: none;
+}
+.navbar-twitch > .container .full-nav {
+	display: none;
+}
+.navbar-twitch.open > .container .full-nav {
+	display: block;
+}
+.navbar-twitch.open > .container .small-nav {
+	display: none;
+}
+.navbar-twitch .navbar-collapse {
+	padding: 0px;
+}
+.navbar-twitch .navbar-nav {
+	float: none;
+	margin: 0px;
+}
+.navbar-twitch .navbar-nav > li > a {
+	padding: 0px;
+}
+.navbar-twitch .navbar-nav > li > a > span {
+	display: block;
+	font-size: 16pt;
+	padding: 13px 15px 13px 12px;
+}
+.navbar-twitch .tooltip,
+.navbar-twitch .tooltip .tooltip-inner {
+	max-width: auto;
+	white-space:nowrap;
+}
+.navbar-twitch-toggle {
+	position: fixed;
+	top: 5px;
+	left: 55px;
+}
+.navbar-twitch ~ .navbar-twitch-toggle > .nav-open {
+	display: inline-block;
+}
+.navbar-twitch ~ .navbar-twitch-toggle > .nav-close {
+	display: none;
+}
+.navbar-twitch.open ~ .navbar-twitch-toggle {
+	left: 245px;
+}
+.navbar-twitch.open ~ .navbar-twitch-toggle > .nav-open {
+	display: none;
+}
+.navbar-twitch.open ~ .navbar-twitch-toggle > .nav-close {
+	display: inline-block;
+}
+
+body {
+    background-color: #4abdd6;
+    padding-top: 15px;
+    padding-left: 65px;
+}
+.box > .icon { text-align: center; position: relative; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 76px; height: 76px; border: 5px solid black; line-height: 88px; border-radius: 50%; background: #FFF; vertical-align: middle; }
+.box > .icon > .image > i { font-size: 36px !important; color: black !important; }
+.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 2px solid white; padding: 15px 0 10px 0; }
+.box > .icon > .info > h3.title { font-family: "Roboto",sans-serif !important; font-size: 16px; color: #222; font-weight: 500; }
+.box > .icon > .info > p { font-family: "Roboto",sans-serif !important; font-size: 13px; color: #e0e0e0; line-height: 1.5em; margin: 20px;}
+.box > .icon > .info > .more a { font-family: "Roboto",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
+.box .space { height: 30px; }
+
+.panel-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+}
+.panel-white {
+  border: 1px solid #dddddd;
+}
+.panel-white  .panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-white  .panel-footer {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.post .post-heading {
+  height: 95px;
+  padding: 20px 15px;
+}
+.post .post-heading .avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+.post .post-heading .meta .title {
+  margin-bottom: 0;
+}
+.post .post-heading .meta .title a {
+  color: black;
+}
+.post .post-heading .meta .title a:hover {
+  color: #aaaaaa;
+}
+.post .post-heading .meta .time {
+  margin-top: 8px;
+  color: #999;
+}
+.post .post-image .image {
+  width: 100%;
+  height: auto;
+}
+.post .post-description {
+  padding: 15px;
+}
+.post .post-description p {
+  font-size: 14px;
+}
+.post .post-description .stats {
+  margin-top: 20px;
+}
+.post .post-description .stats .stat-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+.post .post-description .stats .stat-item .icon {
+  margin-right: 8px;
+}
+.post .post-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+.post .post-footer .input-group-addon a {
+  color: #454545;
+}
+.post .post-footer .comments-list {
+  padding: 0;
+  margin-top: 20px;
+  list-style-type: none;
+}
+.post .post-footer .comments-list .comment {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+}
+.post .post-footer .comments-list .comment .avatar {
+  width: 35px;
+  height: 35px;
+}
+.post .post-footer .comments-list .comment .comment-heading {
+  display: block;
+  width: 100%;
+}
+.post .post-footer .comments-list .comment .comment-heading .user {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline;
+  margin-top: 0;
+  margin-right: 10px;
+}
+.post .post-footer .comments-list .comment .comment-heading .time {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 0;
+  display: inline;
+}
+.post .post-footer .comments-list .comment .comment-body {
+  margin-left: 50px;
+}
+.post .post-footer .comments-list .comment > .comments-list {
+  margin-left: 50px;
+}
+.definitionborder {
+  width: 80%;
+}
+.definition {
+  text-align: left;
+  width: 85%;
+  padding-left: 8%;
+  list-style-position: inside;
+  text-indent: -1em;
+}
+.no-style {
+  text-align: left;
+  width: 85;
+  padding-left: 8%;
+  list-style: none;
+}
+.amatic {
+  font-family: 'Amatic SC';
+  font-size: 45px;
+}
+.amatic-title {
+  font-family: 'Amatic SC';
+  font-size: 35px;
+  font-color: white;
+}

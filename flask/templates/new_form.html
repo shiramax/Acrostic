@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" type="text/css" href="../static/css/general.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+            <div class="container">
+    	        <div class="">
+    	            <ul class="nav navbar-nav">
+    	                <li class="active">
+    	                    <a href="#">
+    	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
+    	            	        <span class="fa fa-home"></span> 
+    	            	    </span>
+    	                        <span class="full-nav"> Home </span>
+    	            	</a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/community">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Community"> 
+    	            	         <span class="fa fa-users" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> Community </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/new_issue">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="New Request"> 
+    	            	         <span class="fa fa-comments-o" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> New Request </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#how-it-works">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
+    	            	         <span class="fa fa-question"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> How It Works </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#about-us">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
+    	            	         <span class="fa fa-info-circle"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> About Us </span>
+    	            	 </a>
+    	                 </li>
+    	            </ul>
+    	        </div><!--/.nav-collapse -->
+            </div>
+        </div> 
+        <h2 id="create">Ask Our Community</h2><br>
+        <h4 id="ask_us">You can always assist our growing community in order to get great suggestions for your Acrostic<br>It's fast, easy and always surprising!</h4><br>
+        <form action="/community" method="post">
+	    <div class="container">
+                <div class="form-group row">
+		    <div class="col-md-3">
+		    </div>
+		    <div class="col-md-6">
+                        <label for="TitleInput">Title</label>
+                        <input type="text" class="form-control" name="title_issue" required><br>
+                    </div>
+		</div>
+                <!-- <                <div class="form-group row">
+div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="textarea" class="form-control" name="description_issue" size="50" required>
+               </div>-->
+    	        <div class="form-group row">
+		    <div class="col-md-3">
+		    </div>
+		    <div class="col-md-6">
+                        <label for="description">Description</label><br>
+    	                <textarea class="form-control" name="description_issue" required></textarea><br>
+    	            </div>
+	        </div>
+    	        <div class="form-group row">
+		    <div class="col-md-3">
+		    </div>
+	            <div class="col-md-6">
+			<form action="/issue" method="get">
+                            <button type="submit" class="btn">Submit</button>
+			</form>
+    	            </div>
+	        </div>
+	    </div>
+        </form>
+    </body>
+</html>

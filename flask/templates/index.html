@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="../static/js/addInput.js"></script>
+        <link rel="stylesheet" type=" text/css" href="../static/css/general.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <!------ Include the above in your HEAD tag ---------->
+    
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+                <div class="container">
+    	        <div class="">
+    	            <ul class="nav navbar-nav">
+    	                <li class="active">
+    	                    <a href="#">
+    	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
+    	            	        <span class="fa fa-home"></span> 
+    	            	    </span>
+    	                        <span class="full-nav"> Home </span>
+    	            	</a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/community">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Community"> 
+    	            	         <span class="fa fa-users" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> Community </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/new_issue">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="New Request"> 
+    	            	         <span class="fa fa-comments-o" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> New Request </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#how-it-works">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
+    	            	         <span class="fa fa-question"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> How It Works </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#about-us">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
+    	            	         <span class="fa fa-info-circle"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> About Us </span>
+    	            	 </a>
+    	                 </li>
+    	            </ul>
+    	        </div><!--/.nav-collapse -->
+            </div>
+        </div> 
+        <section class="bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="control-group" id="fields">
+                        <label class="control-label"></label>
+                        <div class="controls text-center">
+                            <img src="../static/images/acrostic.png" class="center-block">
+    			<br><br>
+                            <form action="/handle_data" method="POST">
+    			    <div class=inputs>
+                                <div class="entry input-group col-xs-5 center-block">
+                                    <input class="form-control" name="fields[]" type="text" placeholder="Type a word or a sentence" />
+                                    <span class="input-group-btn center-block">
+                                        <button class="btn btn-success btn-add" type="button">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+    			    </div>
+    			    <h4>Press <span class="glyphicon glyphicon-plus gs align-middle"></span> to add another word or sentence:)</h4>
+                        	    <br><br><br>
+                                <button type="submit" class="btn">Get your acrostic here!</button>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    <br><br>
+    	{% if data == True %}
+    	    {% if results|length > 0 %}
+    		<div class="container">
+    	        <div class="row">
+    		    <div class="col-md-2"> </div>
+    		        <div class="col-md-8">
+    			    <div class="box">
+				<div class="icon">					 
+    				        <div class="info">
+    					    <h3 class="amatic-title">We Successfully found you a unique ACROSTIC</h3>
+    					    {% for item, definitions in results.items() %}
+    						    <h2 class="amatic"> {{ item }} </h2>
+						    <hr class="definitionborder">
+						    <ul>
+						    {% for definition in definitions %}
+							<br>
+							{% if definition == "No Definition" %}
+							    <li class="no-style">{{ definition }}</li>
+							{% else %}
+                			                    <li class="definition">{{ definition }}</li>
+							{% endif %}
+						    {% endfor %}
+						    </ul>
+    					    {% endfor %}
+    					   
+    					</div>
+				</div>
+    				<div class="space"></div>
+    			    </div> 
+    			</div>
+    		    <div class="col-md-2"> </div>
+    		</div>		
+    		</div>
+    	    {% else %}
+    		<div class="container">
+    	        <div class="row">
+    		    <div class="col-md-2"></div>
+    		        <div class="col-md-8">
+    			    <div class="box">
+		                <div class="icon">                                       
+    				        <div class="info">
+    					    <h3 class="title">Sorry :( we couldn't find you an acrostic</h3>
+    					    <div class="more">
+    					        <a href="#" title="Title Link">Check out our community <i class="fa fa-angle-double-right"></i></a>
+    					    </div>
+    					</div>
+    				</div> 
+    			    <div class="space"></div>
+    			</div>
+    		    <div class="col-md-2"></div>
+    		</div>
+    		</div>
+    	    {% endif %}
+    	{% endif %}
+        </section>
+    </body>
+</html>

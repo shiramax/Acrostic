@@ -1,0 +1,17 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'addField.js') }}"></script>
+    <form id="form">
+        <div>
+            <input type="text" class="form-control" id="line">
+            <button type="button" class="btn" onclick="addInput()">Add</button>
+        </div>
+    </form>
+{% endblock %}

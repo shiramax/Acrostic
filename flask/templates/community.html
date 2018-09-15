@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/general.css">
+        <script src="../static/js/addComment.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/css/general.css">
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+            <div class="container">
+    	        <div class="">
+    	            <ul class="nav navbar-nav">
+    	                <li class="active">
+    	                    <a href="#">
+    	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
+    	            	        <span class="fa fa-home"></span> 
+    	            	    </span>
+    	                        <span class="full-nav"> Home </span>
+    	            	</a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/community">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Community"> 
+    	            	         <span class="fa fa-users" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> Community </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/new_issue">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="New Request"> 
+    	            	         <span class="fa fa-comments-o" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> New Request </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#how-it-works">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
+    	            	         <span class="fa fa-question"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> How It Works </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#about-us">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
+    	            	         <span class="fa fa-info-circle"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> About Us </span>
+    	            	 </a>
+    	                 </li>
+    	            </ul>
+    	        </div><!--/.nav-collapse -->
+            </div>
+        </div> 
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-14 col-sm-offset-1">
+                <br><br>
+                <h1 id="title">Acrostic's Community</h1>
+                <div class="header">
+                    <br><h2 class="reviews">Suggest a solution</h2>
+                    <span> <span class="glyphicon glyphicon-heart"></span> We, in Acrostic believe that sharing is caring <br>
+                     <span class="glyphicon glyphicon-pencil"></span> Suggest a word, a sentence or even a song<br>
+                    <span class="glyphicon glyphicon-bell"></span> Feel free to be as creative as you can</span><br>
+                </div><br>
+               {% for issue in issues %}
+                    <div class="issues">
+                        <ul class="list-group" id="all_issues">
+                            <li class="list-group-item" id="container">
+				<a href= {{ url_for('issue', issue_id= issue[0]) }} ><h4> {{ issue[1] }} </h4></a>
+				<span><h6> {{ issue[3] }} </h4></span>
+				{{ issue[2] }}
+				 <br> <br>
+                                <button onclick="addComment()" type="button" class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-comment"></span> Comment</button><span class="badge">12 comments</span>
+			    </li>
+                        </ul>
+                    </div>
+               {% endfor %}
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
