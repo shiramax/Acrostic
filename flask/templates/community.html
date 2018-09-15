@@ -3,24 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../static/css/general.css">
-        <script src="../static/js/addComment.js"></script>
-        <link rel="stylesheet" type="text/css" href="../static/css/general.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/general.css">
+        <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-twitch" role="navigation">
             <div class="container">
     	        <div class="">
     	            <ul class="nav navbar-nav">
-    	                <li class="active">
-    	                    <a href="#">
+    	                <li>
+    	                    <a href="/">
     	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
     	            	        <span class="fa fa-home"></span> 
     	            	    </span>
     	                        <span class="full-nav"> Home </span>
     	            	</a>
     	                 </li>
-    	                 <li>
+    	                 <li class="active">
     	                     <a href="/community">
     	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Community"> 
     	            	         <span class="fa fa-users" aria-hidden="true"></span> 
@@ -37,7 +37,7 @@
     	            	 </a>
     	                 </li>
     	                 <li>
-    	                     <a href="#how-it-works">
+    	                     <a href="/how_it_works">
     	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
     	            	         <span class="fa fa-question"></span> 
     	            	     </span>
@@ -45,7 +45,7 @@
     	            	 </a>
     	                 </li>
     	                 <li>
-    	                     <a href="#about-us">
+    	                     <a href="/about_us">
     	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
     	            	         <span class="fa fa-info-circle"></span> 
     	            	     </span>
@@ -55,14 +55,14 @@
     	            </ul>
     	        </div><!--/.nav-collapse -->
             </div>
-        </div> 
+        </div>
         <div class="container">
           <div class="row">
             <div class="col-sm-14 col-sm-offset-1">
                 <br><br>
-                <h1 id="title">Acrostic's Community</h1>
+                <h1  class="how-title" >Acrostic's Community</h1>
                 <div class="header">
-                    <br><h2 class="reviews">Suggest a solution</h2>
+                    <br><h4 >Help the community and Suggest a solution</h2>
                     <span> <span class="glyphicon glyphicon-heart"></span> We, in Acrostic believe that sharing is caring <br>
                      <span class="glyphicon glyphicon-pencil"></span> Suggest a word, a sentence or even a song<br>
                     <span class="glyphicon glyphicon-bell"></span> Feel free to be as creative as you can</span><br>
@@ -75,8 +75,6 @@
 				<span><h6> {{ issue[3] }} </h4></span>
 				{{ issue[2] }}
 				 <br> <br>
-                                <button onclick="addComment()" type="button" class="btn btn-default btn-sm">
-				<span class="glyphicon glyphicon-comment"></span> Comment</button><span class="badge">12 comments</span>
 			    </li>
                         </ul>
                     </div>

@@ -39,12 +39,21 @@ def handle_data():
 	if combination[0] not in results:
 	    results[combination[0]] = ["No Definition"]
     con.close()
-    return render_template('index.html', results=results , data=True)
+    return render_template('index.html', results=results , data=True, words=data)
 
 
 @app.route('/new_issue')
 def new_form():
   return render_template('new_form.html')
+
+
+@app.route('/about_us')
+def about_us():
+  return render_template('about.html')
+
+@app.route('/how_it_works')
+def how_it_works():
+  return render_template('how_it_works.html')
 
  
 @app.route('/community', methods=['POST'])
@@ -58,7 +67,10 @@ def new_form_post():
     update_select = "INSERT INTO Issues (issue_title, issue_description, issue_date) VALUES ('%s', '%s', '%s');" %(title_issue , description_issue, str_now)
     cursor.execute(update_select)
     con.commit()
-    return render_template('community.html')
+    sql = "SELECT * FROM Issues;"
+    cursor.execute(sql)
+    issues = cursor.fetchall()
+    return render_template('community.html', issues=issues)
 
 @app.route('/community')
 def community():
@@ -79,13 +91,13 @@ def issue(issue_id):
     sql_get_comment = "SELECT * FROM Comments WHERE issue_id=%s;" % issue_id
     cursor.execute(sql_get_comment)
     comments  = cursor.fetchall()
-    import ipdb; ipdb.set_trace()
+    #import ipdb; ipdb.set_trace()
     if request.method == "POST":
 	comment_description = request.form.get('comment_description')
 	now = datetime.datetime.now()
 	str_now = now.date().isoformat()
-	update_select = "INSERT INTO Comments (comment_description, comment_date, issue_id) VALUES ( '%s', '%s', '%s');" %( comment_description, str_now, issue_id)
-	cursor.execute(update_select)
+	update_select = "INSERT INTO Comments (comment_description, comment_date, issue_id) VALUES (%s, %s, %s);"
+	cursor.execute(update_select, (comment_description, str_now, issue_id))
 	cursor.execute(sql_get_comment)
     	comments  = cursor.fetchall()
 	con.commit()

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>	
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="../static/js/flow.js"></script>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+	<link href="../static/css/general.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+            <div class="container">
+    	        <div class="">
+    	            <ul class="nav navbar-nav">
+    	                <li>
+    	                    <a href="/">
+    	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
+    	            	        <span class="fa fa-home"></span> 
+    	            	    </span>
+    	                        <span class="full-nav"> Home </span>
+    	            	</a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/community">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Community"> 
+    	            	         <span class="fa fa-users" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> Community </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/new_issue">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="New Request"> 
+    	            	         <span class="fa fa-comments-o" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> New Request </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li class="active">
+    	                     <a href="/how_it_works">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
+    	            	         <span class="fa fa-question"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> How It Works </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/about_us">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
+    	            	         <span class="fa fa-info-circle"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> About Us </span>
+    	            	 </a>
+    	                 </li>
+    	            </ul>
+    	        </div><!--/.nav-collapse -->
+            </div>
+        </div> 
+	<h1 class="how-title">How it works</h1>
+	<div class="container diagram">
+	    <div class="row">
+	        <div class="process">
+		    <div class="process-row nav nav-tabs">
+		        <div class="process-step">
+			    <button type="button" class="btn btn-info btn-circle" data-toggle="tab" href="#insert">
+			    <i class="fa fa-list fa-3x"></i></button>
+							<p><small>You insert words<br /> or sentences</small></p>
+						</div>
+						<div class="process-step">
+							<button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#collect">
+							<i class="fa fa-cut fa-3x"></i></button>
+							<p><small>We collect the<br />first letters</small></p>
+						</div>
+						<div class="process-step">
+							<button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#magic">
+							<i class="fa fa-magic fa-3x"></i></button>
+							<p><small>We do our<br />MAGIC</small></p>
+						</div>
+						<div class="process-step">
+							<button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#acrostic">
+							<i class="fa fa-trophy fa-3x"></i></button>
+							<p><small>You get your<br />Acrostic</small></p>
+						</div>
+						<div class="process-step">
+							<button type="button" class="btn btn-default btn-circle" data-toggle="tab" href="#community">
+							<i class="fa fa-comments-o fa-3x"></i></button>
+							<p><small>You get an Acrostic<br />from our community</small></p>
+						</div>
+						<div class="space"></div>
+					</div>
+				</div>
+				<div class="tab-content">
+					<div id="insert" class="tab-pane fade active in">
+						<h3>Insert Words Or Sentences</h3>
+						<p>You insert the words or the sentences you want to remember</p>
+						<ul class="list-unstyled list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-info next-step">Next <i class="fa fa-chevron-right"></i></button>
+							</li>
+						</ul>
+					</div>
+					<div id="collect" class="tab-pane fade">
+						<h3>Collect The First Letter</h3>
+						<p>We collect from each word or sentence you entered the first letter in the line.<br>Now, we have a new string from these letters. We will order this string by lexicographic order.<br>For example, you entered the following words: Milk, Donuts, Hot Dogs, Rice, Apples, Honey, Onions, Tomatos, Eggs and Olives. <br>The initial string we will get is: (M,D,H,R,A,H,O,T,E,O). Finally, we will get this lexicographic sorted string: dehhmooort. </p>
+						<ul class="list-unstyled list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-default prev-step"> <i class="fa fa-chevron-left"></i> Back</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-info next-step">Next <i class="fa fa-chevron-right"></i></button>
+							</li>
+						</ul>
+					</div>
+				    <div id="magic" class="tab-pane fade">
+						<h3>Our Magic</h3>
+						<p>Now, once we have created a string sorted by lexicographic order it's time for us to start our MAGIC.<br>Our database is based on both english dictionary of Oxford and approximately 200 books. In order to find the word / sentence that will provide a perfer ACROSTIC for your wish we sorted our DataBase exactly like we sorted the string. <br>  </p>
+						<ul class="list-unstyled list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-default prev-step"><i class="fa fa-chevron-left"></i> Back</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-info next-step">Next <i class="fa fa-chevron-right"></i></button>
+							</li>
+						</ul>
+				    </div>
+					<div id="acrostic" class="tab-pane fade">
+						<h3>YOUR ACRISTIC IS READY</h3>
+						<p>Now with the use of a simple query we will find you a sutiable ACROSTIC! </p>
+						<ul class="list-unstyled list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-default prev-step"><i class="fa fa-chevron-left"></i> Back</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-info next-step">Next <i class="fa fa-chevron-right"></i></button>
+							</li>
+						</ul>
+					</div>
+					<div id="community" class="tab-pane fade">
+						<h3>Gat help from our growing community</h3>
+						<p>Unfortunatly we couldn't find you an ACROSTIC in our database, but that's exactly why we have created our community.<br> You can post a request for Acrostic and our community will help you to find an Acrostic with creative and cool suggestions.<br>
+						We want you to know that you can post in our community as you want, even before getting the system's Acrostic</p>
+						<ul class="list-unstyled list-inline pull-right">
+							<li>
+								<button type="button" class="btn btn-default prev-step"><i class="fa fa-chevron-left"></i> Back</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-success"><i class="fa fa-check"></i> Done!</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

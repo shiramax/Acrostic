@@ -1,0 +1,23 @@
+import MySQLdb
+import re
+char_list = ["'", "-", " ", '"']
+con = MySQLdb.Connect(host="localhost" ,port= 3360, user="root", passwd="", db="entries")
+cursor = con.cursor()
+sql = "SELECT word,definition FROM entries WHERE orderd_word IS NULL"
+cursor.execute(sql)
+
+results = cursor.fetchall()
+for row in results:
+    word, definition = row[0], row[1]
+    # remove ' - cars and lower case the string
+    ordered_word = re.sub("|".join(char_list), "", word.lower())
+    # sort the word by alphabetical order
+    ordered_word = ''.join(sorted(ordered_word))
+    # import ipdb; ipdb.set_trace()
+    print word, ordered_word
+
+    update_sql = 'UPDATE entries SET orderd_word = "%s" WHERE word = "%s"' % (ordered_word, word)
+    # update_sql = "SELECT orderd_word FROM entries WHERE word = '%s' AND definition = '%s'" % (word, definition)
+
+    cursor.execute(update_sql)
+con.close()

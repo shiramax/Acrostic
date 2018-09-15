@@ -8,8 +8,8 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="../static/js/addInput.js"></script>
         <link rel="stylesheet" type=" text/css" href="../static/css/general.css">
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
-        <!------ Include the above in your HEAD tag ---------->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!------ Include the above in your HEAD tag ---------->-->
     
         <title>Title</title>
     </head>
@@ -19,7 +19,7 @@
     	        <div class="">
     	            <ul class="nav navbar-nav">
     	                <li class="active">
-    	                    <a href="#">
+    	                    <a href="/">
     	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
     	            	        <span class="fa fa-home"></span> 
     	            	    </span>
@@ -43,7 +43,7 @@
     	            	 </a>
     	                 </li>
     	                 <li>
-    	                     <a href="#how-it-works">
+    	                     <a href="/how_it_works">
     	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
     	            	         <span class="fa fa-question"></span> 
     	            	     </span>
@@ -51,7 +51,7 @@
     	            	 </a>
     	                 </li>
     	                 <li>
-    	                     <a href="#about-us">
+    	                     <a href="/about_us">
     	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
     	            	         <span class="fa fa-info-circle"></span> 
     	            	     </span>
@@ -68,12 +68,15 @@
                     <div class="control-group" id="fields">
                         <label class="control-label"></label>
                         <div class="controls text-center">
-                            <img src="../static/images/acrostic.png" class="center-block">
-    			<br><br>
+                            <img src="../static/images/icon.png" class="center-block">
+			    <!--<div class="typewriter"> -->
+				<h1 class="index-title">Acrostic</h1>
+			    <!--</div> -->
+    			    <br><br><br>
                             <form action="/handle_data" method="POST">
     			    <div class=inputs>
                                 <div class="entry input-group col-xs-5 center-block">
-                                    <input class="form-control" name="fields[]" type="text" placeholder="Type a word or a sentence" />
+                                    <input class="form-control" name="fields[]" type="text" placeholder="Type a word or a sentence" required>
                                     <span class="input-group-btn center-block">
                                         <button class="btn btn-success btn-add" type="button">
                                             <span class="glyphicon glyphicon-plus"></span>
@@ -82,8 +85,9 @@
                                 </div>
     			    </div>
     			    <h4>Press <span class="glyphicon glyphicon-plus gs align-middle"></span> to add another word or sentence:)</h4>
-                        	    <br><br><br>
-                                <button type="submit" class="btn">Get your acrostic here!</button>
+                            <br><br>
+                            <button type="submit" class="btn btn-info next-step">Get your acrostic here!</button>
+			    <br>
                               </div>
                             </form>
                         </div>
@@ -95,12 +99,19 @@
     	    {% if results|length > 0 %}
     		<div class="container">
     	        <div class="row">
-    		    <div class="col-md-2"> </div>
+    		    <div class="col-md-2">
+		    </div>
     		        <div class="col-md-8">
     			    <div class="box">
 				<div class="icon">					 
     				        <div class="info">
-    					    <h3 class="amatic-title">We Successfully found you a unique ACROSTIC</h3>
+    					    <h3 class="amatic">SUCCESS!!!
+					    <h3 class="amatic"> We found an ACROSTIC for the following input: </h3>
+					    <ul>
+					        {% for word in words %}
+                                                   <span>  {{ word }} </span>
+                                                {% endfor %}
+					    </ul>
     					    {% for item, definitions in results.items() %}
     						    <h2 class="amatic"> {{ item }} </h2>
 						    <hr class="definitionborder">
@@ -121,7 +132,10 @@
     				<div class="space"></div>
     			    </div> 
     			</div>
-    		    <div class="col-md-2"> </div>
+
+    		    <div class="col-md-2 win-image"> 
+		        <img src="../static/images/win2.png" heigt=400 width=400>
+		    </div>
     		</div>		
     		</div>
     	    {% else %}
@@ -132,9 +146,15 @@
     			    <div class="box">
 		                <div class="icon">                                       
     				        <div class="info">
-    					    <h3 class="title">Sorry :( we couldn't find you an acrostic</h3>
+    					    <h3 class="amatic" >Sorry </h3> 
+					    <h3 class="amatic"> we couldn't find you an acrostic for the following input: </h3>
+                                            <ul>
+                                                {% for word in words %}
+                                                   <span>  {{ word }} </span>
+                                                {% endfor %}
+                                            </ul>
     					    <div class="more">
-    					        <a href="#" title="Title Link">Check out our community <i class="fa fa-angle-double-right"></i></a>
+    					        <a href="/community" title="Title Link">Check out our community <i class="fa fa-angle-double-right"></i></a>
     					    </div>
     					</div>
     				</div> 
