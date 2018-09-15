@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/general.css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+            <div class="container">
+    	        <div class="">
+    	            <ul class="nav navbar-nav">
+    	                <li class="active">
+    	                    <a href="#">
+    	            	    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
+    	            	        <span class="fa fa-home"></span> 
+    	            	    </span>
+    	                        <span class="full-nav"> Home </span>
+    	            	</a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/community">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Community"> 
+    	            	         <span class="fa fa-users" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> Community </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="/new_issue">
+    	                         <span class="small-nav" data-toggle="tooltip" data-placement="right" title="New Request"> 
+    	            	         <span class="fa fa-comments-o" aria-hidden="true"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> New Request </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#how-it-works">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="How It Works"> 
+    	            	         <span class="fa fa-question"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> How It Works </span>
+    	            	 </a>
+    	                 </li>
+    	                 <li>
+    	                     <a href="#about-us">
+    	            	     <span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us"> 
+    	            	         <span class="fa fa-info-circle"></span> 
+    	            	     </span>
+    	            	     <span class="full-nav"> About Us </span>
+    	            	 </a>
+    	                 </li>
+    	            </ul>
+    	        </div><!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <div class="panel panel-white post panel-shadow">
+                    <div class="post-heading">
+                        <div>
+                            <h2 id="test"><b> {{ issue[1] }} </b></h2>
+                        </div>
+                        <h6 class="text-muted time"> {{ issue[3] }}</h6>
+                    </div>
+                    <div class="post-description">
+                        <h4>  {{ issue[2] }} </h4>
+                        <div class="stats">
+                            <a href="#" class="btn btn-default stat-item">
+                                <i class="fa fa-thumbs-up icon"></i>2
+                            </a>
+                            <a href="#" class="btn btn-default stat-item">
+                                <i class="fa fa-share icon"></i>12
+                            </a>
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <form method="POST" >
+			    <div class="input-group">
+                                <input class="form-control" placeholder="Add a comment" type="text" name="comment_description">
+                                <span class="input-group-addon">
+                                    <button class="fa fa-edit"></button>
+                                </span>
+                            </div>
+			</form>
+                        <ul class="comments-list">
+			    {% for comment in comments %}
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h5 class="time"> {{ comment[2] }} </h5>
+                                    </div>
+                                    <p> {{ comment[1] }} </p>
+                                </div>
+                            </li>
+			    {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
