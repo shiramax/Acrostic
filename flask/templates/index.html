@@ -4,14 +4,12 @@
         <meta charset="UTF-8">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="../static/js/addInput.js"></script>
         <link rel="stylesheet" type=" text/css" href="../static/css/general.css">
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!------ Include the above in your HEAD tag ---------->-->
-    
-        <title>Title</title>
+        <title>Acrostic</title>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-twitch" role="navigation">
@@ -59,7 +57,7 @@
     	            	 </a>
     	                 </li>
     	            </ul>
-    	        </div><!--/.nav-collapse -->
+    	        </div>
             </div>
         </div> 
         <section class="bg-light">
@@ -69,16 +67,14 @@
                         <label class="control-label"></label>
                         <div class="controls text-center">
                             <img src="../static/images/icon.png" class="center-block">
-			    <!--<div class="typewriter"> -->
 				<h1 class="index-title">Acrostic</h1>
-			    <!--</div> -->
     			    <br><br><br>
-                            <form action="/handle_data" method="POST">
+                            <form action="/handle_data" method="POST" autocomplete="off">
     			    <div class=inputs>
                                 <div class="entry input-group col-xs-5 center-block">
                                     <input class="form-control" name="fields[]" type="text" placeholder="Type a word or a sentence" required>
                                     <span class="input-group-btn center-block">
-                                        <button class="btn btn-success btn-add" type="button">
+                                        <button class="btn btn-primary btn-add" type="button">
                                             <span class="glyphicon glyphicon-plus"></span>
                                         </button>
                                     </span>
@@ -163,6 +159,7 @@
     		    <div class="col-md-2"></div>
     		</div>
     		</div>
+    		<span class="glyphicon glyphicon-arrow-left arrow"</span></div>
     	    {% endif %}
     	{% endif %}
         </section>

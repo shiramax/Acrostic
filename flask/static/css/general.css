@@ -498,3 +498,20 @@ body {
   border-color: transparent; 
   cursor: default;
 }
+
+.btn-primary{
+  color: white;
+  background-color: black;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: black;
+}
+
+.arrow {
+  top: 5%;
+  left: 5px;
+  bottom: 820px;
+  position: absolute; 
+}

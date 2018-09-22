@@ -13,11 +13,9 @@ for row in results:
     ordered_word = re.sub("|".join(char_list), "", word.lower())
     # sort the word by alphabetical order
     ordered_word = ''.join(sorted(ordered_word))
-    # import ipdb; ipdb.set_trace()
     print word, ordered_word
 
     update_sql = 'UPDATE entries SET orderd_word = "%s" WHERE word = "%s"' % (ordered_word, word)
-    # update_sql = "SELECT orderd_word FROM entries WHERE word = '%s' AND definition = '%s'" % (word, definition)
 
     cursor.execute(update_sql)
 con.close()
